@@ -40,7 +40,7 @@ jobs:
           distribution: "temurin"
           java-version: "17"
 
-     
+
 
       # Caching is a very useful part of a CI, as a workflow is executed in a clean environment every time,
       # this means that one would need to re-download and re-process gradle files for every run. Which is very time consuming.
@@ -85,7 +85,7 @@ jobs:
         id: build
         run: |
           # To run the CI with debug information, add --info
-          ./gradlew assemble lint --parallel --build-cache
+          ./gradlew assemble lint --parallel --build-cache --info
 
       # Run Unit tests
       - name: Run tests
