@@ -26,6 +26,8 @@ class MainActivity : ComponentActivity() {
                         LoginScreen(navigation)
                     }
 
+                    
+
                     composable(Route.Home) {
                         HomeScreen()
                     }
