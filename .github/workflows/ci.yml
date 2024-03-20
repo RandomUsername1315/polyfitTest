@@ -40,14 +40,14 @@ jobs:
           distribution: "temurin"
           java-version: "17"
 
-      # To Load a fake google map api key for the test
+     # To Load a fake google map api key for the test
 
       - name: Loading Local.properties (dummy)
         run: |
-          echo MAPS_API_KEY=\"0\" > ./local.properties
+            echo MAPS_API_KEY=\"0\" > ./local.properties
       - name: Grant execute permission for gradlew
         run: |
-          chmod +x ./gradlew
+            chmod +x ./gradlew
 
       # Caching is a very useful part of a CI, as a workflow is executed in a clean environment every time,
       # this means that one would need to re-download and re-process gradle files for every run. Which is very time consuming.
@@ -92,7 +92,7 @@ jobs:
         env:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: echo $GOOGLE_SERVICES_JSON | base64 -di > ./app/google-services.json
-
+      
       # This step runs gradle commands to build the application
       - name: Assemble
         id: build
